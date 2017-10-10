@@ -2,6 +2,9 @@ FROM ubuntu:16.04
 MAINTAINER gadbees gadbees@gmail.com
 LABEL Description="This image is the base os images."  Version="1.0"
 
+#sudo docker run -d -p 127.0.0.1:50000:5000 --restart=always --name registry  -v  `pwd`/data:/var/lib/registry  registry:2
+
+
 RUN apt-get update
 RUN apt-get install -y vim openssh-server  openssh-client curl  
 
@@ -36,3 +39,8 @@ RUN cat ~/.ssh/id_dsa.pub >> ~/.ssh/authorized_keys
 #service ssh restart && zsh
 
 CMD tail -f /dev/null
+
+
+
+
+
